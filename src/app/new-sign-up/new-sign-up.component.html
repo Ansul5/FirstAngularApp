@@ -1,0 +1,27 @@
+<form action="" class="mx-auto mt-5 w-50" (ngSubmit)=" signUpSubmit(template)" [formGroup]="signUpForm">
+    <label for="" class="form-label mt-5">Enter Username</label>
+    <input type="text" class="form-control" formControlName="Username">
+
+    <p *ngIf=" registrationError" class="text-danger fw-bold">{{registrationError.errorMessage}}</p>
+
+    <label for="" class="form-label mt-3">Enter Password</label>
+    <input type="password" class="form-control" formControlName="Password" name="" id="">
+    
+    <label for="" class="form-label mt-3">Enter Email ID</label>
+    <input type="email" class="form-control" name="" formControlName="email" id="">
+
+    <label for="" class="form-label mt-3">Age</label>
+    <input type="number" class="form-control" name="" formControlName="Age" id="">
+
+    <button class="btn btn-success d-block mx-auto w-50 mt-3" type="submit">Sign Up</button>
+
+</form>
+
+<!-- modal -->
+<ng-template #template>
+    <div class=" modal modal-body text-success fw-bold text-center bg-light">
+        <p>Proceed to Login?</p>
+        <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+        <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+    </div>
+</ng-template>

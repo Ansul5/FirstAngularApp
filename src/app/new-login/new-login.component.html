@@ -1,0 +1,23 @@
+<form action="" class="mx-auto mt-5 w-50" (ngSubmit)=" loginSubmit()" [formGroup]="loginForm">
+    <p *ngIf=" registrationError" class="text-danger fw-bold">{{registrationError.errorMessage}}</p>
+    
+    <label for="" class="form-label mt-5">Enter Username</label>
+    <input type="text" class="form-control" formControlName="Username">
+
+    
+
+    <label for="" class="form-label mt-3">Enter Password</label>
+    <input type="password" class="form-control" formControlName="Password" name="" id="">
+
+   <a class="text-primary mt-3" routerLink="" (click)="forgotPassword()"><small>forgot password</small></a>
+    
+   
+
+    
+
+    <button class="btn btn-success d-block mx-auto w-50 mt-3" type="submit">Login</button>
+
+</form>
+
+
+

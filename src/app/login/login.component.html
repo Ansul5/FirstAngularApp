@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mt-5  mx-auto parent">
+            
+            <form class="w-50 mx-auto" [formGroup]="userLoginForm" (ngSubmit)="formsubmit()" >
+               
+                
+               
+                <h2 class="display-4 text-center mt-3 text-warning">Login <img src="../assets/undraw_profile_pic_ic-5-t.svg" class="mt-3" width="160px"  alt="" ></h2>
+
+                <div class="form-check form-check-inline mt-3" *ngFor="let ut of userTypes ">
+                    <input type="radio" name="userType" value="{{ut}}" formControlName='userType' id='{{ut}}' class="form-check-input">
+                    <label for='{{ut}}' class="form-check-label">{{ut}}</label>
+                </div>
+               
+                <label for="" class="form-label mt-5 d-block"><img src="../assets/email_white_24dp.svg" alt=""> Username</label>
+                <input type="text" class="form-control" formControlName='username'>
+               
+                <label for="" class="mt-3"><img src="../assets/password_white_24dp.svg" alt=""> Password</label>
+                <input type="password" class="form-control mt-2" formControlName='password'>
+                
+                <button class="btn btn-success mt-3 d-block mx-auto mb-3">Login <img src="../assets/login_white_24dp.svg" alt=""></button> 
+                <button class="btn btn-warning d-block mx-auto mb-5" (click)="goTosignUp()">Register</button>
+            </form>
+
+           
+        </div>
+    </div>
+</div>

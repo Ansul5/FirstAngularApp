@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap');
+
+/* body{
+
+    background-image: url('https://wallpaperaccess.com/full/1567677.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+html{
+    position: relative;
+    min-height: 100%;
+}

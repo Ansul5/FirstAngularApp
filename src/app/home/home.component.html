@@ -1,0 +1,83 @@
+<div class="container movie">
+    <form class="mx-auto w-50 text-light" [formGroup]="bookingForm" (ngSubmit)="bookingsubmit()" #ref='ngForm'>
+
+        <label for="" class="form-label mt-5">Enter Name</label>
+        <input type="text" class="form-control" formControlName="Name" >
+      
+
+        <label for="" class="form-label mt-3">Enter Number of Seats</label>
+        <input type="number" class="form-control" name="" id=""  formControlName="NumberOfSeats">
+
+        <h1 class="display-4 mt-3 text-center text-primary">Select the Seats</h1>
+
+        <table class="mx-auto table mt-3 text-light">
+
+            <thead>
+                <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+               
+            </tr>
+            </thead>
+            
+            <!-- <tbody >
+                <tr >
+                     <td *ngFor="let y of seatsA1"><button class="btn" #ref [ngStyle]="{'background-color':y.status}" (click)="changecolor(ref)">{{y.Name}}</button></td> 
+                    </tr>        
+                    <tr>
+                        <td *ngFor="let y of seatsB1"><button class="btn" #ref2  [ngStyle]="{'background-color':y.status}" (click)="changecolor(ref2)" >{{y.Name}}</button></td>
+                    </tr>
+                    
+                   
+            </tbody> -->
+            
+           
+          <tbody>
+              <tr >
+                  <td>A</td>
+                  <td *ngFor="let no of seatsA">
+                      <input type="checkbox" (change)="seatSelectionEvent($event)" class="form-check-input" value="{{no.Name}}" name="{{no.Name}}">
+                  </td>
+              </tr>
+              <tr >
+                  <td>B</td>
+                <td *ngFor="let p of seatsB">
+                    <input type="checkbox" (change)="seatSelectionEvent($event)"  class="form-check-input" value="{{p.Name}}" name="{{p.Name}}">
+                </td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td *ngFor="let y of seatsC">
+                    <input type="checkbox" (change)="seatSelectionEvent($event)" class="form-check-input" value="{{y.Name}}" name="{{y.Name}}">
+                </td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td *ngFor="let y of seatsD">
+                    <input type="checkbox" (change)="seatSelectionEvent($event)" class="form-check-input" value="{{y.Name}}" name="{{y.Name}}">
+                </td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td *ngFor="let y of seatsE">
+                    <input type="checkbox" (change)="seatSelectionEvent($event)" class="form-check-input" value="{{y.Name}}" name="{{y.Name}}">
+                </td>
+            </tr>
+          </tbody>
+
+        </table>
+        <p class="text-danger" *ngIf="getSeatsArray()< no.value">*Please Choose {{no.value}} Seats</p>
+
+        <div class="movie-container">
+            <small class="">Screen This Way <img src="../assets/arrow_downward_white_24dp.svg" alt=""></small>
+        <div class="screen"></div>
+    </div>
+
+
+           <button class="btn btn-danger d-block mx-auto mt-3 mb-3" type="submit">Book Now <img src="../assets/book_online_white_24dp.svg" alt=""></button>
+    </form>
+</div>
